@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    @apply bg-stone-950 text-stone-200 antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  ::selection {
+    @apply bg-amber-500/30 text-amber-100;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-amber-500;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0c0a09;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #292524;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #44403c;
+  }
+}
+
+@layer components {
+  /* Typography scale */
+  .display-xl {
+    @apply font-serif text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none;
+  }
+  .display-lg {
+    @apply font-serif text-4xl md:text-5xl font-bold tracking-tight leading-tight;
+  }
+  .display-md {
+    @apply font-serif text-3xl md:text-4xl font-bold tracking-tight leading-tight;
+  }
+  .display-sm {
+    @apply font-serif text-2xl md:text-3xl font-semibold leading-snug;
+  }
+
+  /* Label / overline */
+  .label {
+    @apply font-sans text-xs font-semibold tracking-widest uppercase text-stone-400;
+  }
+  .label-accent {
+    @apply font-sans text-xs font-semibold tracking-widest uppercase text-amber-500;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-stone-900 border border-stone-800 rounded-xl;
+  }
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-amber-500/40 hover:bg-stone-800;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 text-stone-950 text-sm font-semibold rounded-lg hover:bg-amber-400 transition-colors duration-150;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 text-stone-300 text-sm font-medium rounded-lg border border-stone-700 hover:border-stone-500 hover:text-stone-100 transition-colors duration-150;
+  }
+
+  /* Section containers */
+  .section {
+    @apply py-16 md:py-20;
+  }
+  .section-sm {
+    @apply py-10 md:py-12;
+  }
+  .container-editorial {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .container-prose {
+    @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-stone-800;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium;
+  }
+  .badge-ranking {
+    @apply badge bg-amber-500/10 text-amber-400;
+  }
+  .badge-guia {
+    @apply badge bg-blue-500/10 text-blue-400;
+  }
+  .badge-comparativa {
+    @apply badge bg-emerald-500/10 text-emerald-400;
+  }
+  .badge-consumo {
+    @apply badge bg-purple-500/10 text-purple-400;
+  }
+  .badge-ymyl {
+    @apply badge bg-rose-500/10 text-rose-300;
+  }
+  .badge-categoria {
+    @apply badge bg-stone-500/20 text-stone-300;
+  }
+
+  /* Prose override for article content */
+  .prose-editorial {
+    @apply prose prose-invert max-w-none;
+    @apply prose-headings:font-serif prose-headings:font-semibold;
+    @apply prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4;
+    @apply prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3;
+    @apply prose-p:text-stone-300 prose-p:leading-relaxed;
+    @apply prose-li:text-stone-300;
+    @apply prose-strong:text-stone-100;
+    @apply prose-a:text-amber-400 prose-a:no-underline hover:prose-a:underline;
+    @apply prose-blockquote:border-amber-500 prose-blockquote:text-stone-400;
+    @apply prose-table:text-sm;
+    @apply prose-th:text-stone-200 prose-th:bg-stone-800;
+    @apply prose-td:text-stone-300;
+    @apply prose-hr:border-stone-800;
+  }
+}
